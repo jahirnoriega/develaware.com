@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>Registro</h2>
+	<form (ngSubmit)="submit()" #forma="ngForm">
+		<hr />
+		<label for="name"><b>Nombre</b></label>
+		<input
+            type="text"
+            #name="ngModel"
+            [(ngModel)]="register.name"
+            placeholder="Introduzca su nombre de pila"
+            name="name"
+            minlength="5"
+            class="form-control"
+            required
+            [ngClass]="{'is-valid': !name.invalid, 'is-invalid': name.invalid}"
+          />
+
+		<label for="email"><b>Correo electrónico</b></label>
+		<input
+            type="email"
+            #email="ngModel"
+            [(ngModel)]="register.email"
+            placeholder="Introduzca la correo electrónico"
+            name="email"
+            class="form-control"
+            required
+            [ngClass]="{'is-valid': !email.invalid, 'is-invalid': email.invalid}"
+            pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+          />
+
+		<label for="psw"><b>Contraseña</b></label>
+		<input
+            type="password"
+            placeholder="Introduzca la contraseña"
+            #password="ngModel"
+            [(ngModel)]="register.password"
+            name="password"
+            class="form-control"
+            required
+            [ngClass]="{'is-valid': !password.invalid, 'is-invalid': password.invalid}"
+          />
+		<label for="psw"><b>Repetir Contraseña</b></label>
+		<input
+            type="password"
+            placeholder="Repetir la contraseña"
+            #repeatPass="ngModel"
+            [(ngModel)]="register.repeatPass"
+            name="repeatPass"
+            class="form-control"
+            required
+            [ngClass]="{'is-valid': !repeatPass.invalid, 'is-invalid': repeatPass.invalid}"
+          />
+		<br>
+		<div class="row">
+			<div class="col-lg">
+				<button type="submit" [disabled]="!forma.valid" class="signup-btn">Iniciar sesión</button>
+			</div>
+		</div>
+	</form>
+</div>

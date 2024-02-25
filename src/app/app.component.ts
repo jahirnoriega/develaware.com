@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+
 import { IndexComponent } from './pages/index/index.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { PlansComponent } from './pages/plans/plans.component';
+import { FormularioComponent } from './pages/formulario/formulario.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,7 @@ import { PlansComponent } from './pages/plans/plans.component';
     IndexComponent,
     AboutusComponent,
     PlansComponent,
+    FormularioComponent,
     RouterOutlet,
     RouterLink,
   ],
