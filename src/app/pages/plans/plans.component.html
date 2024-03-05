@@ -2,7 +2,7 @@
   <h1 class="text-3xl font-extrabold my-16 mx-auto">Our Plans</h1>
   <div class="w-full flex justify-center mb-16">
     <div
-      class="bg-zinc-900 hover:bg-blue-600 border border-zinc-500 rounded-2xl px-1 py-3 m-3 w-1/5 transition ease-in-out delay-300 hover:scale-110"
+      class="bg-zinc-900 hover:bg-blue-600 border border-zinc-500 rounded-2xl px-1 py-3 m-3 w-1/5 transition ease-in-out delay-300 hover:scale-110 hover:cursor-pointer"
     >
       <h2 class="font-bold text-3xl my-4">Individual</h2>
       <h1 class="font-bold text-8xl font-bebas my-5">$10</h1>
@@ -10,12 +10,15 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, illum.
         Deleniti quam laborum
       </p>
-      <button class="bg-white text-black m-3 py-1 px-12 rounded-xl shadow">
-        More
+      <button
+        class="bg-white text-black m-3 py-1 px-12 rounded-xl shadow"
+        (dblclick)="doubleclick()"
+      >
+        2X CLICK
       </button>
     </div>
     <div
-      class="bg-zinc-900 hover:bg-blue-600 border border-zinc-500 rounded-2xl px-1 py-3 m-3 w-1/5 transition ease-in-out delay-300 hover:scale-110"
+      class="bg-zinc-900 hover:bg-blue-600 border border-zinc-500 rounded-2xl px-1 py-3 m-3 w-1/5 transition ease-in-out delay-300 hover:scale-110 hover:cursor-pointer"
     >
       <h2 class="font-bold text-3xl my-4">Teams</h2>
       <h1 class="font-bold text-8xl font-bebas my-5">$100</h1>
@@ -23,12 +26,15 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, illum.
         Deleniti quam laborum
       </p>
-      <button class="bg-white text-black m-3 py-1 px-12 rounded-xl shadow">
-        More
+      <button
+        class="bg-white text-black m-3 py-1 px-12 rounded-xl shadow"
+        (mouseenter)="hoverbutton()"
+      >
+        HOVER HERE
       </button>
     </div>
     <div
-      class="bg-zinc-900 hover:bg-blue-600 border border-zinc-500 rounded-2xl px-1 py-3 m-3 w-1/5 transition ease-in-out delay-300 hover:scale-110"
+      class="bg-zinc-900 hover:bg-blue-600 border border-zinc-500 rounded-2xl px-1 py-3 m-3 w-1/5 transition ease-in-out delay-300 hover:scale-110 hover:cursor-pointer"
     >
       <h2 class="font-bold text-3xl my-4">Enterprise</h2>
       <h1 class="font-bold text-8xl font-bebas my-5">$1000</h1>
@@ -36,9 +42,24 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, illum.
         Deleniti quam laborum
       </p>
-      <button class="bg-white text-black m-3 py-1 px-12 rounded-xl shadow">
-        More
+      <button
+        class="bg-white text-black m-3 py-1 px-12 rounded-xl shadow"
+        (click)="clickEvent()"
+      >
+        CLICK HERE
       </button>
     </div>
+  </div>
+</div>
+<div class="flex-col mx-auto text-center mb-14">
+  <div class="flex flex-col mx-auto text-center">
+    <label class="{{ colorActual }} text-white p-3 m-auto rounded-lg mb-3"
+      >Escribe en el input</label
+    >
+    <input
+      (keydown)="cambiarColor()"
+      class="text-black p-3 m-auto rounded-lg"
+      type="text"
+    />
   </div>
 </div>
