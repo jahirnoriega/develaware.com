@@ -36,12 +36,42 @@ export class IndexComponent {
   }
   
   actualizarDatos(): void {
-    const newData = { /* Datos que deseas enviar en la solicitud PUT */ };
+    const newData = { /* Datos que deseas enviar en la solicitud PUT */ 
+    userId: 1,
+    id: 1, // El ID del recurso que deseas actualizar
+    title: 'Peticion PUT',
+    body: 'Nuevo contenido'
+  };
 
     this.phraseService.makePutRequest(newData).subscribe(response => {
+      Swal.fire({
+        title: 'Datos actualizados correctamente',
+        text: 'id Usuario: ' + response.userId + ', title: ' + response.title,
+        icon: 'success'
+      });
       console.log('Datos actualizados correctamente:', response);
     }, error => {
       console.error('Error al actualizar datos:', error);
+    });
+  }
+
+  enviarDatos(): void {
+    const newData = { userId: 1000,
+      id: 1000, // El ID del recurso que deseas actualizar
+      title: 'Peticion POST',
+      body: 'Nueva peticion POST'};
+
+    this.phraseService.makePostRequest(newData).subscribe(response => {
+      Swal.fire({
+        title: 'Datos insertados correctamente',
+        text: 'id Usuario: ' + response.userId + ', title: ' + response.title+', contenido: '+response.body,
+        icon: 'success'
+      });
+      console.log('Respuesta del servidor:', response);
+      // Maneja la respuesta del servidor aquí
+    }, error => {
+      console.error('Error al enviar datos:', error);
+      // Maneja el error aquí
     });
   }
 }
